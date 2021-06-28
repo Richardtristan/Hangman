@@ -1,14 +1,28 @@
 body {
+    font-size: 1.5rem !important;
     font-family: 'Creepster', cursive !important;
 }
 #long {
-    color:red;
+    color: d;
 }
 
 #tabok {
-    color:red;
+    color:#dc3545;
 }
 
 #tabnook{
-    color:red;
+    color:#dc3545;
+}
+
+#vie {
+    color:#dc3545;
+}
+
+#droite{
+    
+    width: 365px;
+}
+
+#long {
+    color:#dc3545;
 }

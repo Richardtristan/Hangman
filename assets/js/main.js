@@ -6,7 +6,9 @@
     var tabnook = document.getElementById("tabnook");
     var display = [];
     var maxreponse = 8;
+    var life = 8;
     const img = document.createElement('img');
+
 
     get_random = function (list) 
         {
@@ -14,7 +16,8 @@
         }
 
     var motallea = get_random(mot);
-    var longeur = motallea.length
+    var longeur = motallea.length;
+    var compare = Array.from(motallea.toUpperCase());
     var lettreok = [];
     var lettrenook = [];
 
@@ -27,77 +30,84 @@
     document.getElementById("insert").onkeyup=function(event)
     {
     var split = motallea.split("");
-
-  
-
+    insert1.value = " ";
     if (split.includes(event.key.toUpperCase())){
-    sort.innerHTML = "ce mot contient cette lettre";
-    lettreok.push(event.key.toUpperCase());
-        
+        sort.innerHTML = "ce mot contient cette lettre";
+        lettreok.push(event.key.toUpperCase());
 
-    for (let i = 0; i < longeur; i++) {
-        
-        if(split[i] == event.key.toUpperCase()){
-            display[i] = event.key;
+        var lettre = event.key;    
+
+        for (let i = 0; i < longeur; i++) {
+            
+            if(split[i] == event.key.toUpperCase()){
+                display[i] = lettre.toUpperCase();
+
+            }
+        }
+        tab.innerHTML = display.join(" ");
+
+    }
+    else{
+        sort.innerHTML = "ce mot ne contient pas cette lettre";
+        lettrenook.push(event.key.toUpperCase());
+        tabnook.innerHTML = lettrenook.join(" ");
+        maxreponse = maxreponse -1;
+        life = life -1;
+        if ( maxreponse == 7){
+            img.src = "assets/img/1.png";
+            img.style.width = "60%";
+            document.getElementById('gauche').appendChild(img);
+        }
+        if ( maxreponse == 6){
+            img.src = "assets/img/2.png";
+            img.style.width = "60%";
+            document.getElementById('gauche').appendChild(img);
+        }
+        if ( maxreponse == 5){
+            img.src = "assets/img/3.png";
+            img.style.width = "60%";
+            document.getElementById('gauche').appendChild(img);
+        }
+        if ( maxreponse == 4){
+            img.src = "assets/img/4.png";
+            img.style.width = "60%";
+            document.getElementById('gauche').appendChild(img);
+        }
+        if ( maxreponse == 3){
+            img.src = "assets/img/5.png";
+            img.style.width = "60%";
+            document.getElementById('gauche').appendChild(img);
+        }
+        if ( maxreponse == 2){
+            img.src = "assets/img/6.png";
+            img.style.width = "60%";
+            document.getElementById('gauche').appendChild(img);
+        }
+        if ( maxreponse == 1){
+            img.src = "assets/img/7.png";
+            img.style.width = "60%";
+            document.getElementById('gauche').appendChild(img);
+        }
+        if ( maxreponse == 0){
+            insert1.value = "";
+            insert1.placeholder = "Refresh la page";
+            insert1.disabled = true;
+            run.disabled = true;
+            proposi.disabled = true;
+            document.getElementById("modal").style.display = "block";   
+            document.getElementById("raté").innerHTML = " le bon mot était : " + motallea;
+            img.src = "assets/img/8.png";
+            img.style.width = "60%";
+            document.getElementById('gauche').appendChild(img) ;
         }
     }
-    tab.innerHTML = display.join(" ");
-
-    }
-        else{
-            sort.innerHTML = "ce mot ne contient pas cette lettre";
-            lettrenook.push(event.key.toUpperCase());
-            tabnook.innerHTML = lettrenook.join(" ");
-            maxreponse = maxreponse -1;
-            if ( maxreponse == 7){
-                img.src = "assets/img/1.png";
-                img.style.width = "60%";
-                document.getElementById('gauche').appendChild(img);
-            }
-            if ( maxreponse == 6){
-                img.src = "assets/img/2.png";
-                img.style.width = "60%";
-                document.getElementById('gauche').appendChild(img);
-            }
-            if ( maxreponse == 5){
-                img.src = "assets/img/3.png";
-                img.style.width = "60%";
-                document.getElementById('gauche').appendChild(img);
-            }
-            if ( maxreponse == 4){
-                img.src = "assets/img/4.png";
-                img.style.width = "60%";
-                document.getElementById('gauche').appendChild(img);
-            }
-            if ( maxreponse == 3){
-                img.src = "assets/img/5.png";
-                img.style.width = "60%";
-                document.getElementById('gauche').appendChild(img);
-            }
-            if ( maxreponse == 2){
-                img.src = "assets/img/6.png";
-                img.style.width = "60%";
-                document.getElementById('gauche').appendChild(img);
-            }
-            if ( maxreponse == 1){
-                img.src = "assets/img/7.png";
-                img.style.width = "60%";
-                document.getElementById('gauche').appendChild(img);
-            }
-            if ( maxreponse == 0){
-                insert1.value = "";
-                insert1.placeholder = "Refresh la page";
-                insert1.disabled = true;
-                run.disabled = true;
-                proposi.disabled = true;
-                document.getElementById("modal").style.display = "block";   
-                document.getElementById("raté").innerHTML = " le bon mot était : " + motallea;
-                img.src = "assets/img/8.png";
-                img.style.width = "60%";
-                document.getElementById('gauche').appendChild(img) ;
-    }
-        }
     document.getElementById("long").innerHTML =  longeur;
+    document.getElementById("vie").innerHTML =  life;
+    if (JSON.stringify(compare)==JSON.stringify(display)){
+        proposi.value = "Bravo c'est le bon mot !";
+        document.getElementById("modal2").style.display = "block"; 
+    }
+
     }
 
     
@@ -108,7 +118,7 @@
             document.getElementById("modal2").style.display = "block"; 
         }
         else{
-            proposi.value = "Cest pas bon!"; 
+            proposi.value = "C'est pas bon!"; 
         }
         
     }
@@ -116,3 +126,8 @@
     {
         document.getElementById("modal").style.display = "none";  
     }
+    document.getElementById("close2").onclick=function()
+    {
+        document.getElementById("modal2").style.display = "none";  
+    }
+
