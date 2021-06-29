@@ -14,7 +14,7 @@
  
 ## Création d'un jeu du pendu : 
  
-* Proposer un mot caché [x]
+* Proposer un mot caché - [x]
 * permettre une selection de lettres [x]
 * verifier si la lettre entré se trouve dans le mot caché [x]
 * compter le nombre d'erreurs [x]
