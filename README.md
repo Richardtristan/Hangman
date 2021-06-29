@@ -30,7 +30,7 @@
 * 
 ## Bonus
 
-* utiliver canvas [ ]
+* utiliver canvas :x:
  
 # Dates du projet : 
  
