@@ -27,7 +27,7 @@
 * laisser le joueur proposer une lettre à la fois 	:chart:
 * ajouter une image pour chaque étapes 	:chart:
 * reconnaitre les insertions clavié 	:chart:
-* 
+
 ## Bonus
 
 * utiliver canvas :x:
