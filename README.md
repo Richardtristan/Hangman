@@ -14,19 +14,19 @@
  
 ## Création d'un jeu du pendu : 
  
-* [x] Proposer un mot caché 
-* permettre une selection de lettres [x]
-* verifier si la lettre entré se trouve dans le mot caché [x]
-* compter le nombre d'erreurs [x]
-* verifier si le jeu est perdu [x]
-* verifier si le mot est trouvé [x]
+*  Proposer un mot caché 	:chart:
+* permettre une selection de lettres 	:chart:
+* verifier si la lettre entré se trouve dans le mot caché 	:chart:
+* compter le nombre d'erreurs 	:chart:
+* verifier si le jeu est perdu 	:chart:
+* verifier si le mot est trouvé 	:chart:
 
 ## Opition
 
-* garder en mémoire les lettres déjà proposées [x]
-* laisser le joueur proposer une lettre à la fois [x]
-* ajouter une image pour chaque étapes [x]
-* reconnaitre les insertions clavié [x]
+* garder en mémoire les lettres déjà proposées 	:chart:
+* laisser le joueur proposer une lettre à la fois 	:chart:
+* ajouter une image pour chaque étapes 	:chart:
+* reconnaitre les insertions clavié 	:chart:
 * 
 ## Bonus
 
