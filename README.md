@@ -4,13 +4,13 @@
 [![forthebadge](https://forthebadge.com/images/badges/uses-css.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/uses-js.svg)](https://forthebadge.com)
 
-## Lien du Jeu du pendu :https://richardtristan.github.io/Hangman/
+## Lien du Jeu du pendu : https://richardtristan.github.io/Hangman/
  
 ## Participants au projet : 
  
 * Tristan RICHARD
  
-# Type de projet : 
+# Type de projet : Pojet Js Jeu du pendu
  
 ## Création d'un jeu du pendu : 
  
